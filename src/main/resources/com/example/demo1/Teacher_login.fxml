@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.Teacher_login_controller">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="100.0" style="-fx-background-color: aqua;" />
+        <Label layoutX="102.0" layoutY="38.0" prefHeight="35.0" prefWidth="198.0" text="TEACHER HOME">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Button fx:id="coursesBtn" layoutX="115.0" layoutY="179.0" mnemonicParsing="false" text="Take Attendance">
+            <font>
+                <Font size="14.0" />
+            </font></Button>
+        <Button fx:id="staffsBtn" layoutX="115.0" layoutY="229.0" mnemonicParsing="false" text="Report">
+            <font>
+                <Font size="14.0" />
+            </font></Button>
+        <Button fx:id="enrollBtn" layoutX="115.0" layoutY="130.0" mnemonicParsing="false" text="Student Records" onAction="#Student_login">
+            <font>
+                <Font size="14.0" />
+            </font></Button>
+        <Button fx:id="backBtn" layoutX="500.0" layoutY="41.0" mnemonicParsing="false" text="Logout" onAction="#BackButton" >
+            <font>
+                <Font size="14.0" />
+            </font></Button>
+        <ImageView fitHeight="245.0" fitWidth="285.0" layoutX="300.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="https://www.edubios.com/assets/images/design/custom-icons/login.png" />
+            </image>
+        </ImageView>
+    </children>
+</Pane>

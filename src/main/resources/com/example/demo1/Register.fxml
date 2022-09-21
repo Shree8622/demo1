@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.Teacher_login_controller">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="100.0" style="-fx-background-color: aqua;" />
+        <Label layoutX="120.0" layoutY="32.0" text="MANAGE STUDENT ENROLLMENT">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <TabPane layoutX="120.0" layoutY="81.0" prefHeight="270.0" prefWidth="259.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="ENROLL STUDENT">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField fx:id="enrollStudentname" layoutX="55.0" layoutY="61.0" promptText="Enter student_name" />
+                                <Button fx:id="addBtn" layoutX="110.0" layoutY="137.0" mnemonicParsing="false" onAction="#Face_reg_page_enter" text="Add" />
+                                <TextField fx:id="enrollStudentId" layoutX="55.0" layoutY="22.0" promptText="Enter StudentId" />
+
+                        <Label fx:id="result" layoutX="114.0" layoutY="173.0" text="" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="REMOVE STUDENT">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="230.0">
+                            <children>
+                                <Button fx:id="removeBtn" layoutX="100.0" layoutY="150.0" mnemonicParsing="false" onAction="#Student_del_call" text="Remove" />
+                                <TextField fx:id="removeStudentId" layoutX="55.0" layoutY="24.0" promptText="Enter StudentId" />
+                                <TextField fx:id="removeName" layoutX="55.0" layoutY="64.0" promptText="Enter student_name" />
+                        <Label fx:id="result1" layoutX="118.0" layoutY="191.0" />
+
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="backBtn" layoutX="511.0" layoutY="33.0" mnemonicParsing="false" onAction="#RegBackButton" text="Back">
+            <font>
+                <Font size="14.0" />
+            </font></Button>
+        <ImageView fitHeight="216.0" fitWidth="223.0" layoutX="379.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+<!--            <image>-->
+<!--                <Image url="@Images/4354122.jpg" />-->
+<!--            </image>-->
+        </ImageView>
+    </children>
+</Pane>
