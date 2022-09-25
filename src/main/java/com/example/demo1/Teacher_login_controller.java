@@ -28,7 +28,7 @@ public class Teacher_login_controller {
 
     public void ReportPage(ActionEvent e) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Student_attendence.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Report.fxml"));
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         Scene s = new Scene(root);
         stage.setScene(s);
@@ -36,7 +36,7 @@ public class Teacher_login_controller {
     }
     public void TakeAttendence(ActionEvent e) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Take_attendence.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Attendence.fxml"));
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         Scene s = new Scene(root);
         stage.setScene(s);
@@ -50,4 +50,5 @@ public class Teacher_login_controller {
         stage.setScene(s);
         stage.show();
     }
+
 }

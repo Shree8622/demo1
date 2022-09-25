@@ -67,6 +67,7 @@ public class Register_controller {
         }
         return true;
     }
+
     boolean duplicate_id(String id,String name) throws IOException
     {
         File f = new File("files/Student_details");
@@ -96,13 +97,25 @@ public class Register_controller {
     private TextField removeStudentId,removeName;
     @FXML
     private Label result1;
+    public static void deleteDirectory(File file)
+    {
+        for (File subfile : file.listFiles()) {
+            if (subfile.isDirectory()) {
+                deleteDirectory(subfile);
+            }
+            subfile.delete();
+        }
+        file.delete();
+    }
     public void Student_del_call(ActionEvent e) throws IOException
     {
         String id = removeStudentId.getText(),name=removeName.getText();
         boolean val = Student_del(id,name);
         if(val)
         {
+            deleteDirectory(new File("files/Dataset/"+id));
             result1.setText("Student removed successfully!");
+
         }
         else
         {
