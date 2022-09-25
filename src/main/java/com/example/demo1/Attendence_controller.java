@@ -165,9 +165,10 @@ public class Attendence_controller {
                     boolean a = false;
                     if(S[0].equals(date.toString()))
                     {
+//                        System.out.println(S[1]);
                         for(String j:S[1].split("/"))
                         {
-                            if(j.equals(label.toString()))
+                            if(j.equals(i.toString()))
                             {
                                 a = true;
                                 break;

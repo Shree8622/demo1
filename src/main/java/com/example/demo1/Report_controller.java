@@ -1,8 +1,11 @@
 package com.example.demo1;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,13 +13,17 @@ import javafx.scene.Scene;
 import java.awt.*;
 import java.io.*;
 
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import javax.swing.text.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
+import java.net.URL;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Report_controller {
-
+    Integer lines;
     public int Attendance_count(String filename,Integer label)throws FileNotFoundException
     {
         Scanner input = new Scanner( new File( filename ) );
@@ -24,25 +31,39 @@ public class Report_controller {
         // char someChar = 'a';
         //int t=lines.length;
         int count = 0;
+        this.lines=0;
         while (input.hasNext() )
         {
+            lines+=1;
             String answer = input.nextLine();
             // answer = answer.toLowerCase();
-            for ( int i = 11; i < answer.length(); i++ )
+            String val = answer.substring(11);
+            String split_arr[] = val.split("/");
+            for ( String s:split_arr)
             {
-                if ( answer.charAt( i ) == label )
+                //System.out.print(answer.charAt(i));
+                if ( s.equals(label.toString()) )
                 {
                     count++;
                 }
             }
-//            System.out.println( answer );
+            System.out.println();
         }
         // input.close();
         return count;
     }
-    public void joinClassHandler(ActionEvent e)
+    @FXML private Label Name;
+    @FXML private Label T_C;
+    @FXML private Label C_A;
+    @FXML private TextField student_name;
+    @FXML private TextField Roll_no;
+    public void joinClassHandler(ActionEvent e) throws IOException
     {
-        System.out.println(e);
+        Name.setText(student_name.getText());
+        Integer x = Attendance_count("files/Attendence_records/DAA",Integer.parseInt(Roll_no.getText()));
+        C_A.setText(x.toString());
+        T_C.setText(lines.toString());
+
     }
     public void backHandler(ActionEvent e) throws IOException
     {
@@ -52,4 +73,6 @@ public class Report_controller {
         stage.setScene(s);
         stage.show();
     }
+
+
 }
